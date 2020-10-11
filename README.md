@@ -6,8 +6,58 @@ Aplicacion `recolector` de Datos Ruido es un proyecto de código abierto que bus
 
 ## Instalación
 
-...
+Requisitos:
 
+* Docker versión 19.03.5
+
+* docker-compose versión 1.24.1
+
+Construir imagen:
+
+```sh
+docker build -t recolector .
+```
+
+Listar imagen:
+
+```sh
+docker image ls
+```
+
+Ejecutar contenedor a partir de imagen:
+
+```sh
+docker run -p 3000:80 -d recolector
+```
+
+Listar contenedores:
+
+```sh
+docker ps
+# filtrado
+docker ps -f name=recolector
+```
+
+Ingresar al contenedor:
+
+```sh
+docker exec -it <contenedor> /bin/bash
+```
+
+Comprobar logs:
+
+```sh
+docker logs <contenedor>
+```
+
+Ejecutar entorno:
+
+```sh
+# desarrollo
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+# producción
+docker-compose up -d
+```
 ## Uso
 
 ...
