@@ -1,9 +1,13 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 
 // Middlewares
 app.use(bodyParser.json());
+app.use(morgan('tiny'))
+app.use(cors());
 
 // Endpoints
 app.get("/", (req, res) => res.send("Hello world!"));
