@@ -15,7 +15,13 @@ Encantados de poder responder a todas tus dudas te dejamos nuestros canales ofic
 
 ## Utilidades
 
-* [Gitpod](https://www.gitpod.io/)
+* [Gitpod](https://www.gitpod.io/) Entorno y editor basado en web
+
+* [Highcharts](https://www.highcharts.com/) Librería `JavaScript` para gráficos interactivos
+
+* [Figma](https://www.figma.com/) Interfaz de diseño colaborativa
+
+* [MongoDB](https://www.mongodb.com/try) Base de datos no relacional
 
 ## Documentación
 
