@@ -15,3 +15,5 @@ y este proyecto se adhiere [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - Endpoints de registro, autenticación e ingreso de mediciones a la aplicación por [@alemelomeza](https://github.com/alemelomeza).
 
 - Persistencia para registro, autenticacion e ingreso de mediciones, además de configuración de variables de entorno por [@alemelomeza](https://github.com/alemelomeza).
+
+- Segurisar la aplicación configurando varias cabeceras `HTTP` por [@alemelomeza](https://github.com/alemelomeza).
