@@ -1,0 +1,35 @@
+{
+  "name": "recolector",
+  "version": "1.0.0",
+  "description": "La aplicación recolector de Datos Ruido es un proyecto de código abierto que busca disponer de una plataforma para el monitoreo ciudadano de niveles de ruido.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "test": "NODE_ENV=test jest --runInBand tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datosruido/recolector.git"
+  },
+  "keywords": [],
+  "author": "Datos Ruido",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/datosruido/recolector/issues"
+  },
+  "homepage": "https://github.com/datosruido/recolector#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.2"
+  },
+  "devDependencies": {
+    "jest": "^26.5.2",
+    "nodemon": "^2.0.4",
+    "superagent": "^6.1.0",
+    "supertest": "^5.0.0"
+  }
+}
