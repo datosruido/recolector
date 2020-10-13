@@ -11,7 +11,7 @@ Por favor antes de todo revisa nuestras [incidencias](https://github.com/datosru
 Encantados de poder responder a todas tus dudas te dejamos nuestros canales oficiales:
 
 * Correo electŕonico [datosruido@gmail.com](mailto:datosruido@gmail.com)
-* Canal Discord [https://discord.gg/tm4Za5y](https://discord.gg/tm4Za5y)
+* Canal Discord [https://discord.gg/XqEKvvh](https://discord.gg/XqEKvvh)
 
 ## Utilidades
 
