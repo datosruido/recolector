@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
+const path = require('path');
 const app = express();
 
 // Middlewares
@@ -21,8 +22,15 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'))
 app.use(cors());
 
+// Assets
+app.use('/assets', express.static(path.join(__dirname, 'public')))
+
+// Pages
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages/index.html'));
+});
+
 // Endpoints
-app.get("/", (req, res) => res.send("Hello world!"));
 app.use('/api/v1/register', require('./endpoints/register'));
 app.use('/api/v1/auth', require('./endpoints/auth'));
 app.use('/api/v1/gatherer', require('./endpoints/gatherer'));
