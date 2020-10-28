@@ -1,18 +1,31 @@
-require('dotenv').config();
+const config = require("./config");
+const { MongoClient } = require("mongodb");
+const url = require("url");
 
-const { MongoClient } = require('mongodb');
+const mongoDatabaseUrl = url.format({
+    protocol: config.mongodb.tls ? "mongodb+srv" : "mongodb",
+    slashes: true,
+    auth: [config.mongodb.adminusername, config.mongodb.adminpassword].join(
+        ":"
+    ),
+    host: config.mongodb.host,
+    pathname: config.mongodb.database,
+    query: {
+        retryWrites: true,
+        w: "majority",
+    },
+});
 
-const mongoDatabaseUrl = `mongodb+srv://${process.env.MONGODB_ADMINUSERNAME}:${process.env.MONGODB_ADMINPASSWORD}@${process.env.MONGODB_HOST}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 let mongoDatabase = null;
 
 async function initializeDatabase() {
-    const dbConnection = await MongoClient.connect(mongoDatabaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-    mongoDatabase = dbConnection.db();
+    const dbConnection = MongoClient.connect(mongoDatabaseUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoDatabase = (await dbConnection).db();
 }
 
 async function getDatabase() {
-    if (!mongoDatabase) await initializeDatabase()
-    return mongoDatabase
+    if (!dbConnection) await initializeDatabase();
+    return mongoDatabase;
 }
 
 module.exports = {
